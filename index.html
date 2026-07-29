@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Software Shootout — Honest, Side-by-Side B2B Software Comparisons</title>
+<meta name="description" content="In-depth ERP, CRM, and operations-software comparisons by people who've actually used them in production. Independent. Vendor-funded? Always disclosed.">
+<meta name="theme-color" content="#111111">
+<meta property="og:title" content="Software Shootout — Honest, Side-by-Side B2B Software Comparisons">
+<meta property="og:description" content="Independent ERP, CRM, and ops-software comparisons by people who've used them in production.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://software-shootout.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23111111'/%3E%3Cpath d='M8 10 L14 22 M18 10 L14 22 M18 10 L24 22 M14 22 L24 22' stroke='%23F5F5F0' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='16' cy='6' r='2' fill='%23EAB308'/%3E%3C/svg%3E">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      fontFamily: {
+        display: ['"Crimson Pro"', 'Georgia', 'serif'],
+        sans: ['Inter', 'system-ui', 'sans-serif']
+      },
+      colors: {
+        ink:    { 900: '#0A0A0A', 800: '#171717', 700: '#262626', 600: '#525252', 500: '#737373' },
+        paper:  { 50: '#FAFAF7', 100: '#F5F5F0', 200: '#E8E8E0' },
+        marker: { 500: '#EAB308', 600: '#CA8A04' }
+      }
+    }
+  }
+}
+</script>
+<style>
+  body { font-family: 'Inter', system-ui, sans-serif; }
+  .font-display { font-family: 'Crimson Pro', Georgia, serif; }
+  .italic-display { font-family: 'Crimson Pro', Georgia, serif; font-style: italic; }
+  *:focus-visible { outline: 3px solid #EAB308; outline-offset: 3px; border-radius: 4px; }
+  .marker {
+    background: linear-gradient(180deg, transparent 60%, rgba(234,179,8,0.4) 60%);
+    padding: 0 0.15em;
+  }
+  .rule-thick { border-top: 4px solid #0A0A0A; }
+  .rule-thin { border-top: 1px solid #0A0A0A; }
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal { opacity: 0; transform: translateY(20px); animation: rise .7s ease-out forwards; }
+    .reveal-2 { animation-delay: .1s; }
+    @keyframes rise { to { opacity: 1; transform: translateY(0); } }
+  }
+</style>
+</head>
+<body class="bg-paper-50 text-ink-900 antialiased">
+
+<a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 bg-ink-900 text-paper-50 px-4 py-2 rounded-md z-50 text-sm font-medium">Skip to content</a>
+
+<header class="border-b-2 border-ink-900 bg-paper-50">
+  <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+    <a href="#" class="flex items-center gap-3" aria-label="Software Shootout home">
+      <span class="w-9 h-9 bg-ink-900 grid place-items-center" aria-hidden="true">
+        <svg class="w-5 h-5" viewBox="0 0 32 32" aria-hidden="true"><path d="M8 10 L14 22 M18 10 L14 22 M18 10 L24 22 M14 22 L24 22" stroke="#F5F5F0" stroke-width="2" fill="none" stroke-linecap="round"/><circle cx="16" cy="6" r="2" fill="#EAB308"/></svg>
+      </span>
+      <span class="font-display font-bold text-xl tracking-tight">Software <span class="italic-display">Shootout</span></span>
+    </a>
+    <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-ink-700" aria-label="Primary">
+      <a href="#latest" class="hover:text-ink-900 underline-offset-4 hover:underline">Latest</a>
+      <a href="#categories" class="hover:text-ink-900 underline-offset-4 hover:underline">Categories</a>
+      <a href="#method" class="hover:text-ink-900 underline-offset-4 hover:underline">Method</a>
+      <a href="#subscribe" class="bg-ink-900 hover:bg-ink-800 text-paper-50 px-4 py-2 font-semibold transition-colors min-h-[44px] inline-flex items-center">Subscribe</a>
+    </nav>
+    <a href="#subscribe" class="md:hidden bg-ink-900 text-paper-50 px-4 py-2 text-sm font-semibold min-h-[44px] inline-flex items-center">Subscribe</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="border-b-2 border-ink-900 bg-paper-50">
+    <div class="max-w-7xl mx-auto px-6 pt-16 pb-20 md:pt-24 md:pb-24">
+      <div class="grid md:grid-cols-12 gap-10 items-end">
+        <div class="md:col-span-8 reveal">
+          <div class="text-xs uppercase tracking-[0.3em] text-ink-600 font-bold mb-6 flex items-center gap-3">
+            <span class="w-10 h-px bg-ink-900" aria-hidden="true"></span>
+            Vol. 1 &middot; Spring 2026 &middot; Independent
+          </div>
+          <h1 class="font-display text-5xl md:text-7xl lg:text-[6rem] font-bold leading-[0.95] tracking-tight mb-8">
+            B2B software,<br>
+            <span class="italic-display">head&nbsp;to&nbsp;head.</span>
+          </h1>
+          <p class="font-display text-xl md:text-2xl text-ink-700 leading-snug mb-8 max-w-2xl italic-display">
+            ERP. CRM. Field service. Marketing automation.<br>
+            We&rsquo;ve <span class="marker">used them in production</span> and we&rsquo;re telling you which one to pick.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-3 mt-10">
+            <a href="#latest" class="inline-flex items-center justify-center gap-2 bg-ink-900 hover:bg-ink-800 text-paper-50 px-7 py-4 font-bold transition-colors min-h-[52px]">
+              Read the latest shootouts
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </a>
+            <a href="#subscribe" class="inline-flex items-center justify-center gap-2 bg-paper-50 hover:bg-paper-100 text-ink-900 border-2 border-ink-900 px-7 py-4 font-bold transition-colors min-h-[52px]">
+              Subscribe (free)
+            </a>
+          </div>
+        </div>
+        <aside class="md:col-span-4 reveal reveal-2">
+          <div class="border-2 border-ink-900 bg-paper-100 p-8">
+            <div class="text-xs uppercase tracking-widest font-bold text-ink-900 mb-4">In this issue</div>
+            <ul class="space-y-3 text-ink-900">
+              <li class="font-display font-semibold text-lg leading-snug border-b border-ink-900/20 pb-3"><span class="italic-display text-marker-600">No. 12</span> &middot; NetSuite vs Business Central, 2026</li>
+              <li class="font-display font-semibold text-lg leading-snug border-b border-ink-900/20 pb-3"><span class="italic-display text-marker-600">No. 11</span> &middot; HubSpot vs Salesforce for mid-market</li>
+              <li class="font-display font-semibold text-lg leading-snug border-b border-ink-900/20 pb-3"><span class="italic-display text-marker-600">No. 10</span> &middot; ServiceTitan vs Housecall Pro</li>
+              <li class="font-display font-semibold text-lg leading-snug"><span class="italic-display text-marker-600">No. 09</span> &middot; The 4 marketing-attribution tools that survived 2025</li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- LATEST -->
+  <section id="latest" class="py-20 md:py-28 border-b-2 border-ink-900">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex items-end justify-between mb-12 flex-wrap gap-4">
+        <h2 class="font-display text-4xl md:text-5xl font-bold leading-tight">Latest <span class="italic-display">shootouts</span></h2>
+        <div class="text-xs font-mono uppercase tracking-widest text-ink-600">Updated weekly</div>
+      </div>
+      <div class="grid md:grid-cols-3 gap-x-8 gap-y-12">
+        <article>
+          <div class="aspect-[5/3] bg-ink-900 mb-5 grid place-items-center text-paper-50 relative overflow-hidden">
+            <div class="text-center">
+              <div class="font-display italic-display text-paper-50/60 text-sm mb-2">No. 12</div>
+              <div class="font-display text-4xl font-bold leading-tight px-6">NetSuite<br><span class="italic-display text-marker-500">vs.</span><br>Business Central</div>
+            </div>
+          </div>
+          <div class="text-xs uppercase tracking-widest text-marker-600 font-bold mb-2">ERP &middot; Mid-market</div>
+          <h3 class="font-display text-2xl font-bold leading-tight mb-3 hover:underline cursor-pointer">The 2026 enterprise ERP shootout: NetSuite vs Business Central</h3>
+          <p class="text-ink-700 text-sm leading-relaxed">Six months in production with both. Where one wins, the other concedes, and what nobody on the sales call will tell you.</p>
+          <div class="mt-4 text-xs text-ink-600 italic-display">12-minute read &middot; March 2026</div>
+        </article>
+        <article>
+          <div class="aspect-[5/3] bg-paper-100 border-2 border-ink-900 mb-5 grid place-items-center relative overflow-hidden">
+            <div class="text-center">
+              <div class="font-display italic-display text-ink-600 text-sm mb-2">No. 11</div>
+              <div class="font-display text-4xl font-bold leading-tight px-6">HubSpot<br><span class="italic-display text-marker-600">vs.</span><br>Salesforce</div>
+            </div>
+          </div>
+          <div class="text-xs uppercase tracking-widest text-marker-600 font-bold mb-2">CRM &middot; Mid-market</div>
+          <h3 class="font-display text-2xl font-bold leading-tight mb-3 hover:underline cursor-pointer">HubSpot vs Salesforce: the honest mid-market verdict</h3>
+          <p class="text-ink-700 text-sm leading-relaxed">When you cross the line at which HubSpot stops being good enough &mdash; and what to do about it.</p>
+          <div class="mt-4 text-xs text-ink-600 italic-display">9-minute read &middot; February 2026</div>
+        </article>
+        <article>
+          <div class="aspect-[5/3] bg-ink-900 mb-5 grid place-items-center text-paper-50 relative overflow-hidden">
+            <div class="text-center">
+              <div class="font-display italic-display text-paper-50/60 text-sm mb-2">No. 10</div>
+              <div class="font-display text-4xl font-bold leading-tight px-6">ServiceTitan<br><span class="italic-display text-marker-500">vs.</span><br>Housecall Pro</div>
+            </div>
+          </div>
+          <div class="text-xs uppercase tracking-widest text-marker-600 font-bold mb-2">Field service</div>
+          <h3 class="font-display text-2xl font-bold leading-tight mb-3 hover:underline cursor-pointer">ServiceTitan vs Housecall Pro: when the &quot;upgrade&quot; isn&rsquo;t one</h3>
+          <p class="text-ink-700 text-sm leading-relaxed">A brutally honest comparison from three contractors who tried both in the same calendar year.</p>
+          <div class="mt-4 text-xs text-ink-600 italic-display">11-minute read &middot; January 2026</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORIES -->
+  <section id="categories" class="py-20 md:py-28 bg-paper-100 border-b-2 border-ink-900">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="font-display text-4xl md:text-5xl font-bold leading-tight mb-12">Browse by <span class="italic-display">category</span></h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-ink-900 border-2 border-ink-900">
+        <a href="#" class="bg-paper-50 hover:bg-paper-100 transition-colors p-7 group block">
+          <div class="font-display italic-display text-marker-600 text-3xl font-bold mb-3 group-hover:translate-x-1 transition-transform">i.</div>
+          <h3 class="font-display text-2xl font-bold mb-1">ERP</h3>
+          <p class="text-sm text-ink-600">NetSuite, Business Central, Acumatica, Sage Intacct, Xero, QuickBooks</p>
+        </a>
+        <a href="#" class="bg-paper-50 hover:bg-paper-100 transition-colors p-7 group block">
+          <div class="font-display italic-display text-marker-600 text-3xl font-bold mb-3 group-hover:translate-x-1 transition-transform">ii.</div>
+          <h3 class="font-display text-2xl font-bold mb-1">CRM</h3>
+          <p class="text-sm text-ink-600">Salesforce, HubSpot, Dynamics 365, Pipedrive, Close</p>
+        </a>
+        <a href="#" class="bg-paper-50 hover:bg-paper-100 transition-colors p-7 group block">
+          <div class="font-display italic-display text-marker-600 text-3xl font-bold mb-3 group-hover:translate-x-1 transition-transform">iii.</div>
+          <h3 class="font-display text-2xl font-bold mb-1">Field Service</h3>
+          <p class="text-sm text-ink-600">ServiceTitan, Jobber, Housecall, Service Fusion, FieldEdge</p>
+        </a>
+        <a href="#" class="bg-paper-50 hover:bg-paper-100 transition-colors p-7 group block">
+          <div class="font-display italic-display text-marker-600 text-3xl font-bold mb-3 group-hover:translate-x-1 transition-transform">iv.</div>
+          <h3 class="font-display text-2xl font-bold mb-1">Marketing Ops</h3>
+          <p class="text-sm text-ink-600">Marketo, HubSpot, Pardot, Klaviyo, Customer.io</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- METHOD -->
+  <section id="method" class="py-20 md:py-28 border-b-2 border-ink-900">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="text-xs uppercase tracking-[0.3em] text-marker-600 font-bold mb-4">The method</div>
+      <h2 class="font-display text-4xl md:text-5xl font-bold leading-tight mb-8">How we <span class="italic-display">actually do this.</span></h2>
+      <div class="space-y-6 font-display text-xl md:text-2xl leading-relaxed text-ink-800">
+        <p>Every shootout starts in production. Not a vendor demo, not a sandbox &mdash; a real implementation, with real users, doing real work.</p>
+        <p>We score on twelve dimensions: time-to-value, total cost over three years, configurability, customisability, mobile-app quality, reporting, support response, ecosystem depth, security, performance, contract terms, and the human factor.</p>
+        <p>We disclose every relationship. If a vendor paid us, you&rsquo;ll see it on the page. If we resell the product, you&rsquo;ll see that too. <span class="marker">No undisclosed affiliate links.</span> Ever.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUBSCRIBE -->
+  <section id="subscribe" class="py-20 md:py-28 bg-ink-900 text-paper-50">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <div class="text-xs uppercase tracking-[0.3em] text-marker-500 font-bold mb-6">Subscribe</div>
+      <h2 class="font-display text-4xl md:text-6xl font-bold leading-tight mb-6">One shootout per <span class="italic-display">fortnight,</span> in your inbox.</h2>
+      <p class="text-lg text-paper-200/85 max-w-xl mx-auto mb-10">
+        No clickbait subject lines. No upsell. Just one well-researched comparison every
+        other Tuesday. Unsubscribe anytime &mdash; we won&rsquo;t take it personally.
+      </p>
+      <form class="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto" onsubmit="event.preventDefault(); document.getElementById('ok').classList.remove('hidden'); document.getElementById('form').classList.add('hidden')" id="form">
+        <label class="sr-only" for="email">Email address</label>
+        <input id="email" type="email" required placeholder="you@example.com" class="flex-1 bg-paper-50 border-2 border-paper-50 text-ink-900 placeholder-ink-600/60 px-5 py-4 outline-none focus:border-marker-500 text-base min-h-[52px]" aria-label="Email address">
+        <button type="submit" class="bg-marker-500 hover:bg-marker-600 text-ink-900 font-bold px-7 py-4 transition-colors inline-flex items-center justify-center gap-2 min-h-[52px]">
+          Subscribe
+        </button>
+      </form>
+      <div id="ok" class="hidden bg-paper-50/10 border border-paper-50/30 text-paper-50 px-6 py-4 max-w-lg mx-auto font-medium" role="status" aria-live="polite">
+        You&rsquo;re in. The next shootout lands in your inbox shortly.
+      </div>
+      <p class="text-xs text-paper-200/50 mt-6 italic-display">No spam. No sponsorship-disguised-as-editorial.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="border-t-2 border-paper-200 bg-paper-50 py-12">
+  <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+    <div class="flex items-center gap-3">
+      <span class="w-7 h-7 bg-ink-900 grid place-items-center" aria-hidden="true">
+        <svg class="w-4 h-4" viewBox="0 0 32 32" aria-hidden="true"><path d="M8 10 L14 22 M18 10 L14 22 M18 10 L24 22 M14 22 L24 22" stroke="#F5F5F0" stroke-width="2" fill="none" stroke-linecap="round"/><circle cx="16" cy="6" r="2" fill="#EAB308"/></svg>
+      </span>
+      <span class="font-display font-bold">Software <span class="italic-display">Shootout</span></span>
+      <span class="text-sm text-ink-600 ml-2">&copy; 2026 &mdash; Independent B2B software comparisons</span>
+    </div>
+    <a href="/cdn-cgi/l/email-protection#086d6c617c677a487b676e7c7f697a6d257b6067677c677d7c266b6765" class="text-sm text-ink-700 hover:text-marker-600 transition-colors italic-display"><span class="__cf_email__" data-cfemail="d7b2b3bea3b8a597a4b8b1a3a0b6a5b2faa4bfb8b8a3b8a2a3f9b4b8ba">[email&#160;protected]</span></a>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>
